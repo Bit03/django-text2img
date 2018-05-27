@@ -234,6 +234,13 @@ class RenderText(object):
         _img.close()
         return _image_fp.getvalue()
 
+    def draw_image_output_io(self):
+        _img = self.draw_image()
+        _image_fp = BytesIO()
+        _img.save(_image_fp, format='JPEG', quality=100)
+        _img.close()
+        return _image_fp
+
 
 if __name__ == "__main__":
     logging.basicConfig(level='INFO')
