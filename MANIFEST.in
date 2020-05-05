@@ -1,0 +1,5 @@
+include LICENSE
+include README.md
+recursive-include test2img *
+recursive-include fonts *
+global-exclude *.pyc
