@@ -28,39 +28,36 @@ FNT_POINT = 24
 FNT_POINT_MARGIN_TOP = int(FNT_POINT * FLOAT_RATE)
 
 RENDER_TEXT_DEFAULTS = {
-    'font': 'NotoSansCJKsc',
-    'font_ext': 'otf',
-    'font_path': os.path.join(BASE_DIR, './fonts/'),
-
-    'font_month_size': FNT_MONTH,
-    'font_week_size': FNT_WEEK,
-    'font_day_size': FNT_DAY,
-    'font_title_size': FNT_TITLE,
-    'font_title_margin_top': FNT_TITLE_MARGIN_TOP,
-    'font_date': FNT_DATE,
-    'font_date_margin_top': FNT_DATE_MARGIN_TOP,
-    'font_content_size': FNT_CONTENT,
-    'font_content_margin_top': FNT_CONTENT_MARGIN_TOP,
-    'font_point': FNT_POINT,
-    'font_point_margin_top': FNT_POINT_MARGIN_TOP,
-
-    'header': os.path.join(BASE_DIR, './source/daily-news-header.png'),
-    'content': os.path.join(BASE_DIR, './source/daily-news-content.png'),
-    'footer': os.path.join(BASE_DIR, './source/daily-news-footer.png'),
-
-    'total_width': TOTAL_WIDTH,
-    'content_margin': CONTENT_MARGIN,
-    'content_width': CONTENT_WIDTH,
-    'title_line_height': TITLE_LINE_HEIGHT,
-    'content_line_height': CONTENT_LINE_HEIGHT,
-    'element_line_height': ELEMENT_LINE_HEIGHT,
-    'float_rate': FLOAT_RATE,
-    'circle_width': CIRCLE_SIZE,
+    "font": "NotoSansCJKsc",
+    "font_ext": "otf",
+    "font_path": os.path.join(BASE_DIR, "./fonts/"),
+    "font_month_size": FNT_MONTH,
+    "font_week_size": FNT_WEEK,
+    "font_day_size": FNT_DAY,
+    "font_title_size": FNT_TITLE,
+    "font_title_margin_top": FNT_TITLE_MARGIN_TOP,
+    "font_date": FNT_DATE,
+    "font_date_margin_top": FNT_DATE_MARGIN_TOP,
+    "font_content_size": FNT_CONTENT,
+    "font_content_margin_top": FNT_CONTENT_MARGIN_TOP,
+    "font_point": FNT_POINT,
+    "font_point_margin_top": FNT_POINT_MARGIN_TOP,
+    "header": os.path.join(BASE_DIR, "./source/daily-news-header.png"),
+    "content": os.path.join(BASE_DIR, "./source/daily-news-content.png"),
+    "footer": os.path.join(BASE_DIR, "./source/daily-news-footer.png"),
+    "total_width": TOTAL_WIDTH,
+    "content_margin": CONTENT_MARGIN,
+    "content_width": CONTENT_WIDTH,
+    "title_line_height": TITLE_LINE_HEIGHT,
+    "content_line_height": CONTENT_LINE_HEIGHT,
+    "element_line_height": ELEMENT_LINE_HEIGHT,
+    "float_rate": FLOAT_RATE,
+    "circle_width": CIRCLE_SIZE,
 }
 
 RENDER_TEXT = RENDER_TEXT_DEFAULTS.copy()
 
-RENDER_TEXT.update(getattr(settings, 'RENDER_TEXT', {}))
+RENDER_TEXT.update(getattr(settings, "RENDER_TEXT", {}))
 
 
 def get_render_text_setting(setting, default=None):
@@ -76,35 +73,35 @@ def font(weight="Regular"):
     :type weight: str
     """
     return "{font_path}{font}-{weight}.{font_ext}".format(
-        font_path=get_render_text_setting('font_path'),
-        font=get_render_text_setting('font'),
+        font_path=get_render_text_setting("font_path"),
+        font=get_render_text_setting("font"),
         weight=weight,
-        font_ext=get_render_text_setting('font_ext')
+        font_ext=get_render_text_setting("font_ext"),
     )
 
 
 def get_font_bold():
-    return font(weight='Bold')
+    return font(weight="Bold")
 
 
 def get_font_medium():
-    return font(weight='Medium')
+    return font(weight="Medium")
 
 
 def get_font_regular():
-    return font(weight='Regular')
+    return font(weight="Regular")
 
 
 def get_header():
-    return get_render_text_setting('header')
+    return get_render_text_setting("header")
 
 
 def get_content():
-    return get_render_text_setting('content')
+    return get_render_text_setting("content")
 
 
 def get_footer():
-    return get_render_text_setting('footer')
+    return get_render_text_setting("footer")
 
 
 if __name__ == "__main__":

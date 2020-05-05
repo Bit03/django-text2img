@@ -18,8 +18,7 @@ from django.contrib import admin
 from render.views import RenderTextView
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-
+    url(r"^admin/", admin.site.urls),
     # url(r'^render/?$', RenderTextView.as_view(), name='render_text'),
-    url(r'^render/', include('render.urls', namespace='render')),
+    url(r"^render/", include("render.urls", namespace="render")),
 ]
