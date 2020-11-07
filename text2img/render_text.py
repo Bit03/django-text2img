@@ -231,7 +231,12 @@ class RenderText(object):
         lines = []
         i = 0
         pattern = r"^[a-zA-Z\']{2,}"  # 单词正则
+        text = text.replace("\r\n", "\n")
+
         while i < len(text):
+            if text[i] == "\n":
+                lines.append(line)
+                line = ""
             rs = re.match(pattern, text[i:])  # 判断当前游标下是否是一个单词起始位
             char = rs.group() if rs else text[i : i + 1]  # 取字
             if font.getsize(line + char)[0] > width:  # 如果行宽已经超过限制宽度时

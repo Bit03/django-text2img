@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 import text2img
 
-install_requires = (["Django >= 1.11", "Pillow >= 5.0"],)
+install_requires = (["Django == 2.2.17", "Pillow >= 5.0"],)
 
 setup(
     name="django-text2img",
