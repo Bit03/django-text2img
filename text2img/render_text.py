@@ -225,12 +225,13 @@ class RenderText(object):
             ">",
             "、",
             "%",
+            "%",
         ]
         prefix = ["（", "(", "『", "「", "“", "‘", "《", "<"]
         line = ""
         lines = []
         i = 0
-        pattern = r"^[a-zA-Z\']{2,}"  # 单词正则
+        pattern = r"^[a-zA-Z\'\.0-9]{2,}"  # 单词正则
 
         # some system will only add \n
         text = text.replace("\r\n", "\n")
@@ -250,7 +251,7 @@ class RenderText(object):
                 if char in suffix:
                     if line[-1] in suffix:  # 处理行尾双重行尾限制符
                         lines.append(line[:-2].strip())
-                        line = line[-2] + char
+                        line = line[-2:] + char
                     else:
                         line += char
                 # 处理行尾字符是否是行首限定字符
@@ -266,7 +267,7 @@ class RenderText(object):
 
         if len(line) > 0:  # 处理余行
             lines.append(line)
-
+        print(lines)
         return lines
 
     # def _get_weekday_name(self, index):
