@@ -267,7 +267,7 @@ class RenderText(object):
 
         if len(line) > 0:  # 处理余行
             lines.append(line)
-        print(lines)
+        # print(lines)
         return lines
 
     # def _get_weekday_name(self, index):
